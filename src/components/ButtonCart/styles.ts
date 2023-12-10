@@ -9,4 +9,5 @@ export const CartButton = styled.button`
   padding: 4px;
   text-aling: center;
   width: 100%;
+  border: none;
 `

@@ -1,14 +1,14 @@
 import Loja from '../Loja'
 import Restaurante from '../models/Restaurante'
-import { Container, List } from './styles'
+import * as S from './styles'
 
 type Props = {
   restaurantes: Restaurante[]
 }
 
 const ListaLojas = ({ restaurantes }: Props) => (
-  <Container>
-    <List>
+  <S.Container>
+    <S.List>
       {restaurantes.map((restaurante) => (
         <Loja
           key={restaurante.id}
@@ -21,8 +21,8 @@ const ListaLojas = ({ restaurantes }: Props) => (
           rote={restaurante.rote}
         />
       ))}
-    </List>
-  </Container>
+    </S.List>
+  </S.Container>
 )
 
 export default ListaLojas

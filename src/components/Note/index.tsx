@@ -1,15 +1,15 @@
 import star from '../../assets/images/Page-1.png'
-import { NoteContainer } from './styles'
+import * as S from './styles'
 
 type Props = {
   children: number
 }
 
 const Note = ({ children }: Props) => (
-  <NoteContainer>
+  <S.NoteContainer>
     <p>{children}</p>
     <img src={star} alt="Estrela" />
-  </NoteContainer>
+  </S.NoteContainer>
 )
 
 export default Note

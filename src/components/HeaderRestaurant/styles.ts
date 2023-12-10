@@ -7,14 +7,14 @@ export const Imagem = styled.div`
   background-repeat: repeat;
   height: 186px;
 `
-export const Container = styled.div`
+export const Header = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 65px;
+  justify-content: space-between;
   color: ${cores.rosa};
   font-size: 18px;
   font-weight: 900;
+  padding: 63px 0 63px 0;
 `
 export const Link = styled.a`
   color: ${cores.rosa};
@@ -39,6 +39,6 @@ export const Nome = styled.h3`
 export const TextoSobreImagem = styled.div`
   position: absolute;
   color: rgba(255, 255, 255, 1);
-  padding-left: 170px;
-  top: 220px;
+  top: 200px;
+  font-size: 32px;
 `

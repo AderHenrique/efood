@@ -14,8 +14,12 @@ export const Links = styled.ul`
 `
 
 export const Text = styled.p`
+  text-aling: center;
+  max-width: 480px;
   font-size: 10px;
   font-height: 12px;
-  padding: 40px;
   color: ${cores.rosa};
+  padding-top: 80px;
+  padding-bottom: 40px;
+  margin: 0 auto;
 `

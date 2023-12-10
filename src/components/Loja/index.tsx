@@ -1,7 +1,7 @@
 import ButtonLink from '../ButtonLink'
 import Note from '../Note'
 import Tag from '../Tag'
-import { Card, Descricao, HeaderLoja, Infos, Titulo } from './styles'
+import * as S from './styles'
 
 type Props = {
   title: string
@@ -22,21 +22,21 @@ const Loja = ({
   note,
   rote
 }: Props) => (
-  <Card>
+  <S.Card>
     <img src={image} />
-    <Infos>
+    <S.Infos>
       <Tag>{category}</Tag>
       {highlight && <Tag>{highlight}</Tag>}
-    </Infos>
-    <HeaderLoja>
-      <Titulo>{title}</Titulo>
+    </S.Infos>
+    <S.HeaderLoja>
+      <S.Titulo>{title}</S.Titulo>
       <Note>{note}</Note>
-    </HeaderLoja>
-    <Descricao>{description}</Descricao>
+    </S.HeaderLoja>
+    <S.Descricao>{description}</S.Descricao>
     <ButtonLink title={'Saiba mais'} to={rote}>
       Saiba mais
     </ButtonLink>
-  </Card>
+  </S.Card>
 )
 
 export default Loja

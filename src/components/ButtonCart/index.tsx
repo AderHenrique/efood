@@ -1,5 +1,5 @@
-import { CartButton } from './styles'
+import * as S from './styles'
 
-const ButtonCart = () => <CartButton>Adicionar ao carrinho</CartButton>
+const ButtonCart = () => <S.CartButton>Adicionar ao carrinho</S.CartButton>
 
 export default ButtonCart

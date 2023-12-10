@@ -16,5 +16,6 @@ export const Texto = styled.h2`
   max-height: 84px;
   text-align: center;
   font-weight: 900;
+  font-size: 36px;
   color: ${cores.rosa};
 `

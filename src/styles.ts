@@ -14,4 +14,10 @@ export const GlobalCss = createGlobalStyle`
     list-style: none;
     text-decoration: none;
   }
+
+  .container{
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+  }
 `

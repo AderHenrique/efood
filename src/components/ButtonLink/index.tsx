@@ -1,4 +1,4 @@
-import { ButtonLinkStyled } from './styles'
+import * as S from './styles'
 import React from 'react'
 
 type Props = {
@@ -9,9 +9,9 @@ type Props = {
 
 const ButtonLink: React.FC<Props> = ({ title, to, children }) => {
   return (
-    <ButtonLinkStyled to={to} title={title}>
+    <S.ButtonLinkStyled to={to} title={title}>
       {children}
-    </ButtonLinkStyled>
+    </S.ButtonLinkStyled>
   )
 }
 export default ButtonLink
