@@ -1,26 +1,29 @@
+import { MenuItems } from '../../pages/BellaTavola'
 import Product from '../Product'
-import ProductConstructor from '../models/ProductConstructor'
 import * as S from './styles'
 
 type Props = {
-  products: ProductConstructor[]
+  menuItem: MenuItems[]
 }
 
-const ProductList = ({ products }: Props) => (
-  <S.Container>
-    <div className="container">
-      <S.List>
-        {products.map((ProductConstructor) => (
-          <Product
-            key={ProductConstructor.id}
-            title={ProductConstructor.title}
-            description={ProductConstructor.description}
-            image={ProductConstructor.image}
-          />
-        ))}
-      </S.List>
-    </div>
-  </S.Container>
-)
-
+const ProductList = ({ menuItem }: Props) => {
+  return (
+    <S.Container>
+      <div className="container">
+        <S.List>
+          {menuItem.map((menuItems) => (
+            <Product
+              key={menuItems.id}
+              title={menuItems.nome}
+              description={menuItems.descricao}
+              image={menuItems.foto}
+              price={menuItems.preco}
+              portion={menuItems.porcao}
+            />
+          ))}
+        </S.List>
+      </div>
+    </S.Container>
+  )
+}
 export default ProductList

@@ -1,13 +1,11 @@
 import * as S from './styles'
-
 import vectorImg from '../../assets/images/Vector.png'
 import logo from '../../assets/images/logo.png'
-
 const HeaderHome = () => (
   <S.Imagem style={{ backgroundImage: `url(${vectorImg})` }}>
-    <div>
+    <S.Logo>
       <img src={logo} alt="EFOOD" />
-    </div>
+    </S.Logo>
     <S.Texto>Viva experiências gastronômicas no conforto da sua casa</S.Texto>
   </S.Imagem>
 )

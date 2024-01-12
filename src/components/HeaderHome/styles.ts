@@ -9,7 +9,6 @@ export const Imagem = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 160px;
 `
 export const Texto = styled.h2`
   max-width: 539px;
@@ -17,5 +16,10 @@ export const Texto = styled.h2`
   text-align: center;
   font-weight: 900;
   font-size: 36px;
+  margin-bottom: 10px;
   color: ${cores.rosa};
+`
+
+export const Logo = styled.div`
+  margin: 30px 0 135px 0;
 `

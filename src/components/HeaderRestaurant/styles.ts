@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
-import ImgRestaurante from '../../assets/images/TrattoriaVector.png'
 
 export const Imagem = styled.div`
   width: 100%;
@@ -23,7 +22,6 @@ export const Link = styled.a`
 export const LogoRestaurante = styled.div`
   width: 100%;
   height: 280px;
-  background-image: url(${ImgRestaurante});
   background-size: cover;
   filter: brightness(50%);
 `

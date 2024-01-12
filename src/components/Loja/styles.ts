@@ -7,6 +7,15 @@ export const Card = styled.div`
   max-width: 472px;
   position: relative;
   padding-bottom: 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+`
+
+export const Imagem = styled.img`
+  width: 472px;
+  height: 217px;
+  padding: 0px;
 `
 export const Titulo = styled.h3`
   font-weight: 700;
@@ -17,12 +26,12 @@ export const Titulo = styled.h3`
 export const HeaderLoja = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 8px 8px 16px 8px;
+  margin: 0px 8px;
 `
 export const Descricao = styled.p`
   font-size: 14px;
   color: ${cores.rosa};
-  padding: 8px 8px 16px 8px;
+  margin: 8px;
 `
 
 export const Infos = styled.div`

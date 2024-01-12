@@ -10,4 +10,16 @@ export const CartButton = styled.button`
   text-aling: center;
   width: 100%;
   border: none;
+  cursor: pointer;
+`
+export const CartInfos = styled.button`
+  font-size: 14px;
+  font-weight: 700;
+  background-color: ${cores.bege};
+  color: ${cores.rosa};
+  padding: 4px;
+  text-aling: center;
+  border: none;
+  width: 218px;
+  cursor: pointer;
 `
