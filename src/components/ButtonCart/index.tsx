@@ -1,12 +1,13 @@
 import * as S from './styles'
 
 type Props = {
-  type: 'cart' | 'infos'
+  type: 'cart' | 'infos' | 'buy'
   onClick: () => void
   valor?: string
+  children?: string
 }
 
-const ButtonCart = ({ type, valor, onClick }: Props) => {
+const ButtonCart = ({ type, valor, onClick, children }: Props) => {
   if (type === 'cart') {
     return <S.CartButton onClick={onClick}>Mais detalhes</S.CartButton>
   }
@@ -16,6 +17,9 @@ const ButtonCart = ({ type, valor, onClick }: Props) => {
         Adicionar ao carrinho - {valor}
       </S.CartInfos>
     )
+  }
+  if (type === 'buy') {
+    return <S.CartBuy onClick={onClick}>{children}</S.CartBuy>
   }
   return null
 }

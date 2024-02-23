@@ -3,11 +3,20 @@ import * as S from './styles'
 import { Menu } from '../../pages/BellaTavola'
 import vectorImg from '../../assets/images/Vector.png'
 
+import { open } from '../../store/reducers/cart'
+import { useDispatch } from 'react-redux'
+
 type Props = {
   loja: Menu
 }
 
 const HeaderRestaurant = ({ loja }: Props) => {
+  const dispatch = useDispatch()
+
+  const openCart = () => {
+    dispatch(open())
+  }
+
   const capa = loja.capa || ''
   const tipo = loja.tipo || ''
   const nome = loja.titulo || ''
@@ -18,10 +27,9 @@ const HeaderRestaurant = ({ loja }: Props) => {
         <S.Header className="container">
           <S.Link href="/">Restaurantes</S.Link>
           <img src={logo} alt="EFOOD" />
-          <p>
-            <span>0 </span>
-            produto(s) no carrinho
-          </p>
+          <S.CartButton onClick={openCart}>
+            0 - produto(s) no carrinho
+          </S.CartButton>
         </S.Header>
       </S.Imagem>
       <S.LogoRestaurante style={{ backgroundImage: `url(${capa})` }} />

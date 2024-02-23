@@ -40,3 +40,7 @@ export const TextoSobreImagem = styled.div`
   top: 200px;
   font-size: 32px;
 `
+
+export const CartButton = styled.a`
+  cursor: pointer;
+`
