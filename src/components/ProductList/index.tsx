@@ -14,11 +14,12 @@ const ProductList = ({ menuItem }: Props) => {
           {menuItem.map((menuItems) => (
             <Product
               key={menuItems.id}
-              title={menuItems.nome}
-              description={menuItems.descricao}
-              image={menuItems.foto}
-              price={menuItems.preco}
-              portion={menuItems.porcao}
+              id={menuItems.id}
+              nome={menuItems.nome}
+              descricao={menuItems.descricao}
+              foto={menuItems.foto}
+              preco={menuItems.preco}
+              porcao={menuItems.porcao}
             />
           ))}
         </S.List>

@@ -1,24 +1,24 @@
-import { Restaurantes } from '../../pages/Home'
+import { Restaurante } from '../../pages/Home'
 import Loja from '../Loja'
 import * as S from './styles'
 
 type Props = {
-  restaurante: Restaurantes[]
+  restaurantes: Restaurante[]
 }
 
-const ListaLojas = ({ restaurante }: Props) => (
+const ListaLojas = ({ restaurantes }: Props) => (
   <S.Container>
     <S.List>
-      {restaurante.map((restaurantes) => (
+      {restaurantes.map((restaurante) => (
         <Loja
-          key={restaurantes.id}
-          title={restaurantes.titulo}
-          category={restaurantes.tipo}
-          highlight={restaurantes.destacado}
-          note={restaurantes.avaliacao}
-          description={restaurantes.descricao}
-          image={restaurantes.capa}
-          rota={`${restaurantes.id}`}
+          key={restaurante.id}
+          title={restaurante.titulo}
+          category={restaurante.tipo}
+          highlight={restaurante.destacado}
+          note={restaurante.avaliacao}
+          description={restaurante.descricao}
+          image={restaurante.capa}
+          rota={`${restaurante.id}`}
         />
       ))}
     </S.List>
