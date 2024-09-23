@@ -1,4 +1,4 @@
-import star from '../../assets/images/Page-1.png'
+import star from '../../assets/images/iconStar.png'
 import * as S from './styles'
 
 type Props = {

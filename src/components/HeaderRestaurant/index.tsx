@@ -1,6 +1,6 @@
 import logo from '../../assets/images/logo.png'
 import * as S from './styles'
-import { Menu } from '../../pages/BellaTavola'
+import { Menu } from '../../pages/Restaurante'
 import vectorImg from '../../assets/images/Vector.png'
 
 import { open } from '../../store/reducers/cart'

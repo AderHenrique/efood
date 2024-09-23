@@ -1,7 +1,7 @@
 {
   "editor.formatOnSave": false,
   "editor.fontFamily": "JetBrains Mono",
-  "editor.fontSize": 18,
+  "editor.fontSize": 16,
   "editor.lineHeight": 1.8,
   "editor.rulers": [80,120],
   "workbench.startupEditor": "newUntitledFile",
@@ -11,7 +11,7 @@
   "explorer.compactFolders": false,
   "editor.semanticHighlighting.enabled": false,
   "breadcrumbs.enabled": false,
-  "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.location": "top",
   "editor.minimap.enabled": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"

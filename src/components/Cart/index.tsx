@@ -1,12 +1,15 @@
-import ButtonCart from '../ButtonCart'
-import * as S from './styles'
-import lixeria from '../../assets/images/lixeira-de-reciclagem 1.png'
 import { useDispatch, useSelector } from 'react-redux'
+
+import * as S from './styles'
+
 import { RootReducer } from '../../store'
 import { close } from '../../store/reducers/cart'
 
+import ButtonCart from '../ButtonCart'
+import lixeria from '../../assets/images/lixeira-de-reciclagem 1.png'
+
 // eslint-disable-next-line @typescript-eslint/no-empty-function
-const handleClick = () => {} // Função vazia
+const handleClick = () => {}
 
 const Cart = () => {
   const { isOpen } = useSelector((state: RootReducer) => state.cart)

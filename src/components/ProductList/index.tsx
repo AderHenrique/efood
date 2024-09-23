@@ -1,4 +1,4 @@
-import { MenuItems } from '../../pages/BellaTavola'
+import { MenuItems } from '../../pages/Restaurante'
 import Product from '../Product'
 import * as S from './styles'
 

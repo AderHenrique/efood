@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { MenuItems } from '../../pages/BellaTavola'
+import { MenuItems } from '../../pages/Restaurante'
 
 type CartState = {
   items: MenuItems[]
