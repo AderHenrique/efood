@@ -3,11 +3,7 @@ import Loja from '../Loja'
 import * as S from './styles'
 
 type Props = {
-<<<<<<< HEAD
-  restaurantes: Restaurantes[]
-=======
   restaurantes: Restaurante[]
->>>>>>> ef65e7dd95d9e76145152e5bc1657510f6f5ea05
 }
 
 const ListaLojas = ({ restaurantes }: Props) => (
