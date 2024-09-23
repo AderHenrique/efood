@@ -1,6 +1,7 @@
 import HeaderHome from '../../components/HeaderHome'
 import ListaLojas from '../../components/ListaLojas'
 import { useGetHomeQuery } from '../../services/api'
+<<<<<<< HEAD
 
 export interface CardapioItem {
   foto: string
@@ -10,8 +11,10 @@ export interface CardapioItem {
   descricao: string
   porcao: string
 }
+=======
+>>>>>>> ef65e7dd95d9e76145152e5bc1657510f6f5ea05
 
-export type Restaurantes = {
+export type Restaurante = {
   id: number
   titulo: string
   destacado: boolean
@@ -23,16 +26,26 @@ export type Restaurantes = {
 }
 
 const Home = () => {
+<<<<<<< HEAD
   const { data: restaurantes, isLoading } = useGetHomeQuery()
 
   if (isLoading || !restaurantes) {
+=======
+  const { data: restaurante, isLoading } = useGetHomeQuery()
+
+  if (isLoading || !restaurante) {
+>>>>>>> ef65e7dd95d9e76145152e5bc1657510f6f5ea05
     return <h3>Carregando</h3>
   }
 
   return (
     <>
       <HeaderHome />
+<<<<<<< HEAD
       <ListaLojas restaurantes={restaurantes} />
+=======
+      <ListaLojas restaurantes={restaurante} />
+>>>>>>> ef65e7dd95d9e76145152e5bc1657510f6f5ea05
     </>
   )
 }
