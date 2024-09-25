@@ -3,67 +3,61 @@ import { useDispatch, useSelector } from 'react-redux'
 import * as S from './styles'
 
 import { RootReducer } from '../../store'
-import { close } from '../../store/reducers/cart'
+import { close, remove } from '../../store/reducers/cart'
 
 import ButtonCart from '../ButtonCart'
 import lixeria from '../../assets/images/lixeira-de-reciclagem 1.png'
+import { formataPreco } from '../../utils/format'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const handleClick = () => {}
 
 const Cart = () => {
-  const { isOpen } = useSelector((state: RootReducer) => state.cart)
+  const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
 
   const dispatch = useDispatch()
 
   const closeCart = () => {
     dispatch(close())
   }
+  const removeItem = (id: number) => {
+    dispatch(remove(id))
+  }
+
+  const getTotalPrice = () => {
+    return items.reduce((acumulador, itemAtual) => {
+      return (acumulador += itemAtual.preco * itemAtual.quantity)
+    }, 0)
+  }
+
   return (
     <S.CartContainer className={isOpen ? 'is-open' : ''}>
       <S.Overlay onClick={closeCart} />
       <S.Sidebar>
         <S.Card>
-          <S.Item>
-            <img
-              src="https://via.placeholder.com/80x80"
-              alt="Imagem de espaço reservado 80x80"
-            />
-            <S.ItemInfos>
-              <h3>Nome produto</h3>
-              <p>R$ 60,90</p>
-              <S.LixeiraIcon src={lixeria} />
-            </S.ItemInfos>
-          </S.Item>
-          <S.Item>
-            <img
-              src="https://via.placeholder.com/80x80"
-              alt="Imagem de espaço reservado 80x80"
-            />
-            <S.ItemInfos>
-              <h3>Nome produto</h3>
-              <p>R$ 60,90</p>
-              <S.LixeiraIcon src={lixeria} />
-            </S.ItemInfos>
-          </S.Item>
-          <S.Item>
-            <img
-              src="https://via.placeholder.com/80x80"
-              alt="Imagem de espaço reservado 80x80"
-            />
-            <S.ItemInfos>
-              <h3>Nome produto</h3>
-              <p>R$ 60,90</p>
-              <S.LixeiraIcon src={lixeria} />
-            </S.ItemInfos>
-          </S.Item>
+          {items.map((item) => (
+            <S.Item key={item.id}>
+              <S.img src={item.foto} alt={item.nome} />
+              <S.ItemInfos>
+                <h3>{item.nome}</h3>
+                <p>{formataPreco(item.preco)}</p>
+                <p>Quantidade: {item.quantity}</p>
+              </S.ItemInfos>
+              <S.LixeiraIcon
+                src={lixeria}
+                alt="Remover item"
+                onClick={() => removeItem(item.id)}
+              />
+            </S.Item>
+          ))}
         </S.Card>
+
         <S.Price>
           <div>
             <p>Valor total</p>
           </div>
           <div>
-            <p>R$ 189,00</p>
+            <p>{formataPreco(getTotalPrice())}</p>
           </div>
         </S.Price>
         <ButtonCart type="buy" onClick={handleClick}>

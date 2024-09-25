@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
+import { Link as RouterLink } from 'react-router-dom'
 
 export const Imagem = styled.div`
   width: 100%;
@@ -13,9 +14,17 @@ export const Header = styled.div`
   color: ${cores.rosa};
   font-size: 18px;
   font-weight: 900;
-  padding: 63px 0 63px 0;
+  padding: 63px 0;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+    gap: 12px;
+  }
 `
-export const Link = styled.a`
+export const Link = styled(RouterLink)`
   color: ${cores.rosa};
 `
 

@@ -6,8 +6,15 @@ export const cores = {
   bege: '#FFEBD9',
   preto: '#000'
 }
+
+export const breakpoints = {
+  mobile: '480px',
+  tablet: '768px',
+  desktop: '1024px'
+}
+
 export const GlobalCss = createGlobalStyle`
-  *{
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,9 +23,13 @@ export const GlobalCss = createGlobalStyle`
     text-decoration: none;
   }
 
-  .container{
+  .container {
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
+
+    @media (max-width: 768px) {
+      max-width: 80%;
+    }
   }
 `

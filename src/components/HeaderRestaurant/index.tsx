@@ -1,10 +1,13 @@
-import logo from '../../assets/images/logo.png'
-import * as S from './styles'
-import { Menu } from '../../pages/Restaurante'
-import vectorImg from '../../assets/images/Vector.png'
+import { useDispatch, useSelector } from 'react-redux'
 
+import { RootReducer } from '../../store'
+import { Menu } from '../../pages/Restaurante'
 import { open } from '../../store/reducers/cart'
-import { useDispatch } from 'react-redux'
+
+import vectorImg from '../../assets/images/Vector.png'
+import logo from '../../assets/images/logo.png'
+
+import * as S from './styles'
 
 type Props = {
   loja: Menu
@@ -12,6 +15,7 @@ type Props = {
 
 const HeaderRestaurant = ({ loja }: Props) => {
   const dispatch = useDispatch()
+  const { items } = useSelector((state: RootReducer) => state.cart)
 
   const openCart = () => {
     dispatch(open())
@@ -25,10 +29,10 @@ const HeaderRestaurant = ({ loja }: Props) => {
     <>
       <S.Imagem style={{ backgroundImage: `url(${vectorImg})` }}>
         <S.Header className="container">
-          <S.Link href="/">Restaurantes</S.Link>
+          <S.Link to="/">Restaurantes</S.Link>
           <img src={logo} alt="EFOOD" />
           <S.CartButton onClick={openCart}>
-            0 - produto(s) no carrinho
+            {items.length} - produto(s) no carrinho
           </S.CartButton>
         </S.Header>
       </S.Imagem>

@@ -1,42 +1,27 @@
-import * as S from './styles'
-import ButtonCart from '../ButtonCart'
-import fechar from '../../assets/images/close 1.png'
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { add } from '../../store/reducers/cart'
+import * as S from './styles' // estilos
+import ButtonCart from '../ButtonCart' // componente interno
+import fechar from '../../assets/images/close 1.png' // asset
+import { useState } from 'react' // biblioteca externa
+import { useDispatch } from 'react-redux' // Redux
+import { add, open } from '../../store/reducers/cart' // ação do Redux
+import { MenuItems } from '../../pages/Restaurante'
+import { formataPreco } from '../../utils/format'
 
 type Props = {
-  foto: string
-  preco: number
-  nome: string
-  descricao: string
-  porcao: string
-  id: number
+  menuItem: MenuItems // prop
 }
 
-const Product = ({ nome, descricao, foto, porcao, preco, id }: Props) => {
+const Product = ({ menuItem }: Props) => {
   const dispatch = useDispatch()
-
-  const addToCart = () => {
-    dispatch(add({ nome, descricao, foto, porcao, preco, id }))
-  }
-
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const openModal = () => {
-    setIsModalOpen(true)
+  const addToCart = () => {
+    dispatch(add(menuItem))
+    dispatch(open())
   }
 
-  const closeModal = () => {
-    setIsModalOpen(false)
-  }
-
-  const formataPreco = (preco: number) => {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format(preco)
-  }
+  const openModal = () => setIsModalOpen(true)
+  const closeModal = () => setIsModalOpen(false)
 
   const cortaTexto = (text: string, maxLength: number) => {
     return {
@@ -45,40 +30,46 @@ const Product = ({ nome, descricao, foto, porcao, preco, id }: Props) => {
       original: text
     }
   }
+
+  const handleAddToCart = () => {
+    addToCart()
+    closeModal()
+  }
+
+  const { nome, descricao, foto, porcao, preco } = menuItem
   const { textoCortado, original } = cortaTexto(descricao, 128)
 
   return (
-    <>
+    <div className="container">
       <S.Card>
         <S.Image src={foto} alt={nome} />
         <S.Titulo>{nome}</S.Titulo>
         <S.Descricao>{textoCortado}</S.Descricao>
         <ButtonCart type={'cart'} onClick={openModal} />
       </S.Card>
-      <>
-        {isModalOpen && (
-          <>
-            <S.Overlay isOpen={isModalOpen} onClick={closeModal} />
-            <S.Modal>
-              <S.Imgfechar src={fechar} onClick={closeModal} />
-              <S.ModalContent className="container">
-                <S.ImgComida src={foto} />
-                <S.Infos>
-                  <h3>{nome}</h3>
-                  <p>{original}</p>
-                  <p>{porcao}</p>
-                  <ButtonCart
-                    onClick={addToCart}
-                    type={'infos'}
-                    valor={formataPreco(preco)}
-                  />
-                </S.Infos>
-              </S.ModalContent>
-            </S.Modal>
-          </>
-        )}
-      </>
-    </>
+
+      {isModalOpen && (
+        <>
+          <S.Overlay isOpen={isModalOpen} onClick={closeModal} />
+          <S.Modal>
+            <S.Imgfechar src={fechar} onClick={closeModal} />
+            <S.ModalContent className="container">
+              <S.ImgComida src={foto} alt={nome} />
+              <S.Infos>
+                <h3>{nome}</h3>
+                <p>{original}</p>
+                <p>{porcao}</p>
+                <ButtonCart
+                  onClick={handleAddToCart}
+                  type={'infos'}
+                  valor={formataPreco(preco)}
+                />
+              </S.Infos>
+            </S.ModalContent>
+          </S.Modal>
+        </>
+      )}
+    </div>
   )
 }
 

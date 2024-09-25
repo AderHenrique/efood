@@ -1,6 +1,7 @@
-import * as S from './styles'
 import vectorImg from '../../assets/images/Vector.png'
 import logo from '../../assets/images/logo.png'
+
+import * as S from './styles'
 
 const HeaderHome = () => (
   <S.Imagem style={{ backgroundImage: `url(${vectorImg})` }}>

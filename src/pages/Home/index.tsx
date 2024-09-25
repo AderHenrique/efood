@@ -30,10 +30,10 @@ const Home = () => {
   }
 
   return (
-    <>
+    <div>
       <HeaderHome />
       <ListaLojas restaurantes={restaurantes} />
-    </>
+    </div>
   )
 }
 

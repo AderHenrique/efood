@@ -7,7 +7,7 @@ interface OverlayProps {
 
 export const Card = styled.div`
   background-color: ${cores.rosa};
-  max-width: 320px;
+  width: 320px;
   padding: 8px;
   display: grid;
   grid-template-columns: 1fr;

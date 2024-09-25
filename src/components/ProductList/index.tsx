@@ -11,20 +11,13 @@ const ProductList = ({ menuItem }: Props) => {
     <S.Container>
       <div className="container">
         <S.List>
-          {menuItem.map((menuItems) => (
-            <Product
-              key={menuItems.id}
-              id={menuItems.id}
-              nome={menuItems.nome}
-              descricao={menuItems.descricao}
-              foto={menuItems.foto}
-              preco={menuItems.preco}
-              porcao={menuItems.porcao}
-            />
+          {menuItem.map((item) => (
+            <Product key={item.id} menuItem={item} />
           ))}
         </S.List>
       </div>
     </S.Container>
   )
 }
+
 export default ProductList

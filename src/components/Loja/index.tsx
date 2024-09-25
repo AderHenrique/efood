@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom'
+
 import ButtonLink from '../ButtonLink'
 import Note from '../Note'
 import Tag from '../Tag'
+
 import * as S from './styles'
-import { Link } from 'react-router-dom'
 
 type Props = {
   title: string
