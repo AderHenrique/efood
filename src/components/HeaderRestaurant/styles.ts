@@ -50,6 +50,6 @@ export const TextoSobreImagem = styled.div`
   font-size: 32px;
 `
 
-export const CartButton = styled.a`
+export const OpenCart = styled.a`
   cursor: pointer;
 `

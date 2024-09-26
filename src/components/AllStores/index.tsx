@@ -1,5 +1,5 @@
 import { Restaurante } from '../../pages/Home'
-import Loja from '../Loja'
+import Loja from '../StoreCard'
 
 import * as S from './styles'
 
@@ -7,7 +7,7 @@ type Props = {
   restaurantes: Restaurante[]
 }
 
-const ListaLojas = ({ restaurantes }: Props) => (
+const AllStores = ({ restaurantes }: Props) => (
   <S.Container>
     <S.List>
       {restaurantes.map((restaurante) => (
@@ -26,4 +26,4 @@ const ListaLojas = ({ restaurantes }: Props) => (
   </S.Container>
 )
 
-export default ListaLojas
+export default AllStores

@@ -5,9 +5,9 @@ import * as S from './styles'
 import { RootReducer } from '../../store'
 import { close, remove } from '../../store/reducers/cart'
 
-import ButtonCart from '../ButtonCart'
 import lixeria from '../../assets/images/lixeira-de-reciclagem 1.png'
 import { formataPreco } from '../../utils/format'
+import Button from '../Button'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const handleClick = () => {}
@@ -60,9 +60,9 @@ const Cart = () => {
             <p>{formataPreco(getTotalPrice())}</p>
           </div>
         </S.Price>
-        <ButtonCart type="buy" onClick={handleClick}>
+        <Button type="cart" onClick={handleClick}>
           Continuar com a entrega
-        </ButtonCart>
+        </Button>
       </S.Sidebar>
     </S.CartContainer>
   )

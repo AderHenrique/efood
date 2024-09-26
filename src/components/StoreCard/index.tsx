@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
 
-import ButtonLink from '../ButtonLink'
 import Note from '../Note'
 import Tag from '../Tag'
 
 import * as S from './styles'
+import Button from '../Button'
 
 type Props = {
   title: string
@@ -16,7 +16,7 @@ type Props = {
   rota: string
 }
 
-const Loja = ({
+const StoreCard = ({
   title,
   category,
   highlight,
@@ -38,10 +38,10 @@ const Loja = ({
       </S.HeaderLoja>
       <S.Descricao>{description}</S.Descricao>
       <Link to={`/restaurante/${rota}`}>
-        <ButtonLink title={'Saiba mais'}>Saiba mais</ButtonLink>
+        <Button type="link">Saiba mais</Button>
       </Link>
     </S.Card>
   )
 }
 
-export default Loja
+export default StoreCard

@@ -31,9 +31,9 @@ const HeaderRestaurant = ({ loja }: Props) => {
         <S.Header className="container">
           <S.Link to="/">Restaurantes</S.Link>
           <img src={logo} alt="EFOOD" />
-          <S.CartButton onClick={openCart}>
+          <S.OpenCart onClick={openCart}>
             {items.length} - produto(s) no carrinho
-          </S.CartButton>
+          </S.OpenCart>
         </S.Header>
       </S.Imagem>
       <S.LogoRestaurante style={{ backgroundImage: `url(${capa})` }} />

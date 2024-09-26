@@ -1,5 +1,5 @@
 import HeaderHome from '../../components/HeaderHome'
-import ListaLojas from '../../components/ListaLojas'
+import ListaLojas from '../../components/AllStores'
 import { useGetHomeQuery } from '../../services/api'
 
 export interface CardapioItem {

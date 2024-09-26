@@ -1,14 +1,14 @@
-import * as S from './styles' // estilos
-import ButtonCart from '../ButtonCart' // componente interno
-import fechar from '../../assets/images/close 1.png' // asset
-import { useState } from 'react' // biblioteca externa
-import { useDispatch } from 'react-redux' // Redux
-import { add, open } from '../../store/reducers/cart' // ação do Redux
+import * as S from './styles'
+import fechar from '../../assets/images/close 1.png'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { add, open } from '../../store/reducers/cart'
 import { MenuItems } from '../../pages/Restaurante'
 import { formataPreco } from '../../utils/format'
+import Button from '../Button'
 
 type Props = {
-  menuItem: MenuItems // prop
+  menuItem: MenuItems
 }
 
 const Product = ({ menuItem }: Props) => {
@@ -45,7 +45,9 @@ const Product = ({ menuItem }: Props) => {
         <S.Image src={foto} alt={nome} />
         <S.Titulo>{nome}</S.Titulo>
         <S.Descricao>{textoCortado}</S.Descricao>
-        <ButtonCart type={'cart'} onClick={openModal} />
+        <Button type="cart" onClick={openModal}>
+          Mais detalhes
+        </Button>
       </S.Card>
 
       {isModalOpen && (
@@ -59,11 +61,9 @@ const Product = ({ menuItem }: Props) => {
                 <h3>{nome}</h3>
                 <p>{original}</p>
                 <p>{porcao}</p>
-                <ButtonCart
-                  onClick={handleAddToCart}
-                  type={'infos'}
-                  valor={formataPreco(preco)}
-                />
+                <Button type="addToCart" onClick={handleAddToCart}>
+                  {`Adicionar ao carrinho - ${formataPreco(preco)}`}
+                </Button>
               </S.Infos>
             </S.ModalContent>
           </S.Modal>
