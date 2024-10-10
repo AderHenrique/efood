@@ -1,5 +1,5 @@
 import { Restaurante } from '../../pages/Home'
-import Loja from '../StoreCard'
+import StoreCard from '../StoreCard'
 
 import * as S from './styles'
 
@@ -11,7 +11,7 @@ const AllStores = ({ restaurantes }: Props) => (
   <S.Container>
     <S.List>
       {restaurantes.map((restaurante) => (
-        <Loja
+        <StoreCard
           key={restaurante.id}
           title={restaurante.titulo}
           category={restaurante.tipo}

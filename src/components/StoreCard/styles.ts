@@ -16,6 +16,7 @@ export const Imagem = styled.img`
   width: 472px;
   height: 217px;
   padding: 0px;
+  object-fit: cover;
 `
 export const Titulo = styled.h3`
   font-weight: 700;

@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
 
+interface InputGroupProps {
+  $maxWidth?: string
+}
+
 export const Overlay = styled.div`
   position: absolute;
   top: 0;
@@ -32,6 +36,29 @@ export const Sidebar = styled.aside`
   width: 100%;
   height: 100%;
   padding: 16px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    margin-bottom: 16px;
+
+    &.bege {
+      color: ${cores.bege};
+    }
+
+    &.rosa {
+      color: ${cores.rosa};
+    }
+  }
+
+  p {
+    &.bege {
+      color: ${cores.bege};
+      line-height: 22px;
+      margin-bottom: 8px;
+    }
+  }
 `
 
 export const Price = styled.div`
@@ -83,4 +110,54 @@ export const LixeiraIcon = styled.img`
 export const img = styled.img`
   height: 100px;
   width: 100px;
+
+  object-fit: cover;
+`
+
+export const InputGroup = styled.div<InputGroupProps>`
+  flex: auto;
+
+  max-width: ${(props) => props.$maxWidth || 'none'};
+
+  label {
+    color: ${cores.bege};
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  input {
+    background-color: ${cores.bege};
+    color: ${cores.preto};
+    height: 32px;
+    padding: 0 8px;
+    border: 1px solid ${cores.bege};
+    width: 100%;
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    font-weight: 700;
+  }
+`
+
+export const FlexContainer = styled.div`
+  display: flex;
+  gap: 34px;
+`
+
+export const ButtonGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  gap: 8px;
+`
+
+export const ErrorMessage = styled.p`
+  color: ${cores.preto};
+  text-align: center;
+  padding: 8px 0;
+  margin-top: 4px;
+  display: block;
 `

@@ -60,6 +60,7 @@ export const Overlay = styled.div<OverlayProps>`
 export const ImgComida = styled.img`
   width: 280px;
   height: 280px;
+  object-fit: cover;
 `
 export const Imgfechar = styled.img`
   position: relative;
